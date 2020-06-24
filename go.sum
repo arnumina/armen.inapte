@@ -1,0 +1,9 @@
+github.com/arnumina/armen.core v0.0.0-20200624095608-91106335490b h1:COasel6uuKQ3gRZ3hAtaEF6V3n9aK0Z/0SO1u33lsL0=
+github.com/arnumina/armen.core v0.0.0-20200624095608-91106335490b/go.mod h1:Uz4Hnike4qGvsNVNKiiAq8MIPubOeLCHJ6YMBLC9EKM=
+github.com/dolmen-go/jsonptr v0.0.0-20200427210345-20e1608f9d85 h1:UehF9pCOF1JiOLmeZavootTCuimvkW7N1wggjyW4S90=
+github.com/dolmen-go/jsonptr v0.0.0-20200427210345-20e1608f9d85/go.mod h1:+6ZQtcQuiOH4ATMF+4885rhnE3FaM++MhE7m7vM302s=
+github.com/gorilla/mux v1.7.4 h1:VuZ8uybHlWmqV03+zRzdwKL4tUnIp1MAQtp1mIFE1bc=
+github.com/gorilla/mux v1.7.4/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776 h1:tQIYjPdBoyREyB9XMu+nnTclpTYkz2zFM+lzLJFO4gQ=
+gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
