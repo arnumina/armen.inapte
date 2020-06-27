@@ -38,11 +38,10 @@ func (a *Application) msgHandler(msg *message.Message) {
 }
 
 func (a *Application) subscribe(bus component.Bus) error {
-	err := bus.Subscribe(
+	if err := bus.Subscribe(
 		a.msgHandler,
 		"create[.]job[.]inapte[.].+",
-	)
-	if err != nil {
+	); err != nil {
 		return err
 	}
 
