@@ -21,8 +21,8 @@ import (
 )
 
 type (
-	// JobTest AFAIRE
-	JobTest struct {
+	// Job AFAIRE
+	Job struct {
 		*jw.Job
 		logger component.Logger
 		res    *resources.Resources
@@ -30,8 +30,8 @@ type (
 )
 
 // New AFAIRE
-func New(job *jw.Job, logger component.Logger, res *resources.Resources) *JobTest {
-	return &JobTest{
+func New(job *jw.Job, logger component.Logger, res *resources.Resources) *Job {
+	return &Job{
 		Job:    job,
 		logger: logger,
 		res:    res,
@@ -39,7 +39,7 @@ func New(job *jw.Job, logger component.Logger, res *resources.Resources) *JobTes
 }
 
 // Run AFAIRE
-func (j *JobTest) Run() *jw.Result {
+func (j *Job) Run() *jw.Result {
 	var steps = map[string]*jw.Step{
 		"alpha": {
 			Application: "inapte",

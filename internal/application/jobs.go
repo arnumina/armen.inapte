@@ -22,6 +22,7 @@ import (
 )
 
 const (
+	_typeJobNop  = "nop"
 	_typeJobTest = "test"
 )
 
@@ -30,13 +31,14 @@ func (a *Application) createJob(
 	return jw.NewJob(id, n, a.Name(), t, o, c, e, g, p, em)
 }
 
-func (a *Application) createJobTest(msg *message.Message) *jw.Job {
-	var c = _typeJobTest
-	return a.createJob(msg.ID, _typeJobTest, _typeJobTest, msg.Publisher, &c, jw.Itself, nil, jw.Low, nil)
-}
-
 func (a *Application) maybeInsertJob(job *jw.Job) (bool, error) {
 	return a.resources.MaybeInsertJob(job)
+}
+
+func (a *Application) createJobTest(msg *message.Message) {
+	var c = _typeJobTest
+	job := a.createJob(msg.ID, _typeJobTest, _typeJobTest, msg.Publisher, &c, jw.Itself, nil, jw.Low, nil)
+	_, _ = a.maybeInsertJob(job)
 }
 
 // RunJob AFAIRE
@@ -44,9 +46,9 @@ func (a *Application) RunJob(job *jw.Job, logger component.Logger) *jw.Result {
 	var jwr jw.Runner
 
 	switch job.Type {
-	case "nop":
+	case _typeJobNop:
 		jwr = nop.New(job, logger, a.resources)
-	case "test":
+	case _typeJobTest:
 		jwr = test.New(job, logger, a.resources)
 	default:
 		return jw.NewResult(

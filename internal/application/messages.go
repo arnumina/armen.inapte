@@ -26,7 +26,7 @@ func (a *Application) msgHandler(msg *message.Message) {
 
 	switch msg.Topic {
 	case "create.job.inapte.test":
-		_, _ = a.maybeInsertJob(a.createJobTest(msg))
+		a.createJobTest(msg)
 	default:
 		a.logger.Error( //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 			"The topic of this message is not valid",

@@ -20,8 +20,8 @@ import (
 )
 
 type (
-	// JobNop AFAIRE
-	JobNop struct {
+	// Job AFAIRE
+	Job struct {
 		*jw.Job
 		logger component.Logger
 		res    *resources.Resources
@@ -29,8 +29,8 @@ type (
 )
 
 // New AFAIRE
-func New(job *jw.Job, logger component.Logger, res *resources.Resources) *JobNop {
-	return &JobNop{
+func New(job *jw.Job, logger component.Logger, res *resources.Resources) *Job {
+	return &Job{
 		Job:    job,
 		logger: logger,
 		res:    res,
@@ -38,7 +38,7 @@ func New(job *jw.Job, logger component.Logger, res *resources.Resources) *JobNop
 }
 
 // Run AFAIRE
-func (j *JobNop) Run() *jw.Result {
+func (j *Job) Run() *jw.Result {
 	j.Data[j.ID] = time.Now()
 	j.Data["_"+j.Name] = j.ID
 
